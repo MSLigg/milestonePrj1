@@ -1,0 +1,16 @@
+body {
+    background-image: url(images/background.png);
+    background-repeat: no-repeat;
+    background-position: ;
+    align-content: center;
+}
+button {
+    text-align: center;
+    height: 70px;
+    width: 200px;
+    background-color: lightgreen;
+    border-radius: 20px;
+    border-color: m;
+    font-weight: bolder;
+    font-size: larger;
+}
