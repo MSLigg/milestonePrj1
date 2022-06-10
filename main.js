@@ -1,4 +1,4 @@
-//8 cards for the game
+//8 tiles for the game
 const tileArray = [
   {
     name: 'anniespratt',
@@ -35,14 +35,26 @@ const tileArray = [
 ]
 const tilesChosen = [];
 
-  // Create and push duplicates to cards variable (prevent writing duplicates in db.js)
+// create tile dupes
   function createTiles() {
-    for (let i = 0; i < cardArray.length; i++) {
+    for (let i = 0; i < tileArray.length; i++) {
       tiles.push(tileArray[i])
     }
-    // Randomize/shuffle cards
-    tiles.sort(() => 0.5 - Math.random());
+// scramble tiles
+    tileArray.sort(() => 0.5 - Math.random());
   }
+
+function createField() {
+    for (let i = 0; i < tileArray.length; i++ {
+        var tile = document.createElement('img')
+        tile.setAttribute('source', 'images/cover.png')
+        tile.addEventListener('click')
+        
+
+
+    })
+}
+
 
   //click event
 function flipOver() {
@@ -50,11 +62,16 @@ function flipOver() {
 }
 
 //check for match
-if tilesChosen === 2 && {
+if tilesChosen === 2 && tile1 === tile2{
+    //play chime
 
 }
 
 //if tiles match, set image to default to 'remove'
 if tilesChosen[0] === tilesChosen[1] {
-    
+
+    tile1?setAttribute('source', 'images/transparent.png')
+    tile2?setAttribute('source', 'images/transparent.png')
 }
+
+createField()
