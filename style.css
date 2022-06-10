@@ -1,9 +1,9 @@
 body {
     background-image: url(images/background.png);
     background-repeat: no-repeat;
-    background-position: ;
     align-content: center;
 }
+
 button {
     text-align: center;
     height: 70px;
@@ -14,3 +14,7 @@ button {
     font-weight: bolder;
     font-size: larger;
 }
+
+Other thnigs to work on:
+    stretch/fill background image
+    center button on landing page
