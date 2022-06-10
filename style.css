@@ -14,9 +14,9 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(0, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(210, 245, 196);
     border-radius: 20px;
-    border: 12px dotted rgb(194, 94, 12);
+    border: 12px groove rgb(194, 94, 12);
     font-weight: bolder;
     padding: +20px;
     font-size: larger;
@@ -24,9 +24,17 @@ button {
 
 div {
     background-color: bisque;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     flex-wrap: wrap;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px groove rgb(194, 94, 12);
+    border-radius: 20px;
+    opacity: 0.9;
+
 
 }
 /*/Other thnigs to work on
