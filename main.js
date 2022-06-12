@@ -35,7 +35,7 @@ const tileArray = [
 ]
 const tilesChosen = [];
 
-// create tile dupes
+// create tile dupes so you won't have to hard code 16 tiles
   function createTiles() {
     for (let i = 0; i < tileArray.length; i++) {
       tiles.push(tileArray[i])

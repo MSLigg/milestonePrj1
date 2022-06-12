@@ -27,7 +27,6 @@ div {
     background-color: bisque;
     height: 600px;
     width: 600px;
-    flex-wrap: wrap;
     position: fixed;
     left: 50%;
     top: 60%;
@@ -35,7 +34,7 @@ div {
     border: 6px groove rgb(194, 94, 12);
     border-radius: 20px;
     opacity: 0.9;
-
+    justify-content: space-between;
 
 }
 
@@ -47,6 +46,14 @@ h2 {
     top: 7%;
     font-family: 'Kaushan Script', cursive;
 }
+
+/*animation when the cards don't match /*
+@keyframes
+
+*/
+
+
+
 /*/Other thnigs to work on
     music and controls
     pop up window for rules
