@@ -17,19 +17,20 @@ button {
     background-color: rgb(210, 245, 196);
     border-radius: 20px;
     border: 12px groove rgb(194, 94, 12);
-    font-weight: bolder;
     padding: +20px;
-    font-size: larger;
+    font-size: 20px;
+    /*font-weight: bolder;*/
+    font-family: 'Kaushan Script', cursive;
 }
 
 div {
     background-color: bisque;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     flex-wrap: wrap;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
     border: 6px groove rgb(194, 94, 12);
     border-radius: 20px;
@@ -37,6 +38,16 @@ div {
 
 
 }
+
+h2 {
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 7px;
+    position: fixed;
+    top: 7%;
+    font-family: 'Kaushan Script', cursive;
+}
 /*/Other thnigs to work on
-   // stretch/fill background image
-   // center button on landing page
+    music and controls
+    pop up window for rules
+    nav bar
