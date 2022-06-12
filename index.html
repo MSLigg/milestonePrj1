@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Nature memory game</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="nav.css" rel="stylesheet" type="text/css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,9 +15,47 @@
     />
   </head>
   <body>
-    <!--Nav bar for rules, settings-->
+    <!--Nav bar for rules, settings  -->
+    <nav>
+      <ul>
+        <li class="menu">Rules</li>
+        <li class="menu">Settings</li>
+        <li class="menu">Resources Used</li>
+      </ul>
+    </nav>
+
     <h2>Relax in nature and test your memory with a game</h2>
-    <div class="playingField"></div>
+
+    <div class="playingField">
+      <ul class="tiles">
+        <div class="rowOne">
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+        </div>
+
+        <div class="rowTwo">
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+        </div>
+        <div class="rowThree">
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+        </div>
+        <div class="rowFour">
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+          <li><img src="images\cover.png" alt="icon" /></li>
+        </div>
+      </ul>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
