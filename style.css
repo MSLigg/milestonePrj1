@@ -12,21 +12,20 @@ button {
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translate(0, -50%);
-    background-color: rgb(150, 217, 203);
+    background-color: rgb(204, 237, 192);
     border-radius: 20px;
-    background-color: rgb(224, 109, 12);
-        padding: +20px;
-    font-size: 20px;
-    /*font-weight: bolder;*/
+    border: 20px groove rgb(255, 202, 10);
+    padding: +20px;
+    font-size: 30px;
     font-family: 'Kaushan Script', cursive;
 }
 
 .playingField {
     background-color: bisque;
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
     position: fixed;
     left: 50%;
     top: 60%;
@@ -34,18 +33,23 @@ button {
     border: 6px groove rgb(224, 109, 12);
     border-radius: 20px;
     opacity: 0.9;
-    justify-content: space-between;
-
 
 }
 
+div>li {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
 
 h2 {
     background-color: bisque;
     border-radius: 20px;
     padding: 7px;
     position: fixed;
-    top: 7%;
+    top: 8%;
     font-family: 'Kaushan Script', cursive;
     color: rgb(7, 66, 7);
 }
