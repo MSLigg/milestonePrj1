@@ -30,34 +30,40 @@ button {
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
-    border: 6px groove rgb(224, 109, 12);
+    border: 8px groove rgb(224, 109, 12);
     border-radius: 20px;
     opacity: 0.9;
-
+    display: flex;
+    align-items: center;
 }
-
+img>.playingField {
+    height: 150px;
+    width: 150px;
+}
 div>li {
     display: inline-flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 
 }
 
 h2 {
     background-color: bisque;
     border-radius: 20px;
+    border: 8px groove rgb(204, 237, 192);
     padding: 7px;
     position: fixed;
-    top: 8%;
+    top: 10%;
+    left: 35%;
     font-family: 'Kaushan Script', cursive;
     color: rgb(7, 66, 7);
+    
 }
 
 nav {
     top: 0px;
     background-color: rgb(224, 109, 12);
-    border: 6px groove bisque;
+    border: 8px groove bisque;
     border-radius: 20px;
     color: bisque;
     height: 2%;
@@ -68,14 +74,13 @@ nav {
 
 nav>ul {
     list-style-type: none;
-    text-align: center;
-
+    text-align: justify;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 nav>li {
     font-family: 'Kaushan Script', cursive;
-    display: inline-block;
-
 }
 
 /*animation when the cards don't match /*
