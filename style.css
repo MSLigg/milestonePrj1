@@ -40,6 +40,7 @@ img>.playingField {
     height: 150px;
     width: 150px;
 }
+
 div>li {
     display: inline-flex;
     flex-wrap: wrap;
@@ -82,6 +83,11 @@ nav>ul {
 nav>li {
     font-family: 'Kaushan Script', cursive;
 }
+
+
+
+
+
 
 /*animation when the cards don't match /*
 @keyframes

@@ -1,4 +1,4 @@
-//8 tiles for the game
+// tiles for the game
 const tileArray = [
   {
     name: 'anniespratt',
@@ -31,11 +31,11 @@ const tileArray = [
   {
     name: 'sincerely',
     img: 'images/tiles/sincerely.jpg'
-  },
+  }
 ]
 const tilesChosen = [];
 
-// create tile dupes so you won't have to hard code 16 tiles
+// create tile dupes so I won't have to hard code 16 tiles, by creating a for loop this just cretes a copy of a tile at whatever index my loop is at through the length of the array
   function createTiles() {
     for (let i = 0; i < tileArray.length; i++) {
       tiles.push(tileArray[i])
@@ -45,18 +45,18 @@ const tilesChosen = [];
   }
 
 function createField() {
-    for (let i = 0; i < tileArray.length; i++ {
+    for (let i = 0; i < tileArray.length; i++) {
         var tile = document.createElement('img')
-        tile.setAttribute('source', 'images/cover.png')
+        tile.setAttribute('src', 'images/cover.png')
         tile.addEventListener('click')
         
 
 
-    })
+    }
 }
 
 
-  //click event
+  //clicking event listener
 function flipOver() {
 
 }
@@ -70,8 +70,8 @@ if tilesChosen === 2 && tile1 === tile2{
 //if tiles match, set image to default to 'remove'
 if tilesChosen[0] === tilesChosen[1] {
 
-    tile1?setAttribute('source', 'images/transparent.png')
-    tile2?setAttribute('source', 'images/transparent.png')
+    tile1?setAttribute('src', 'images/transparent.png')
+    tile2?setAttribute('src', 'images/transparent.png')
 }
 
 createField()
