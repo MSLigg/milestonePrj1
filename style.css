@@ -44,13 +44,15 @@ button {
     justify-content: space-around;
     align-items: center;
     position: relative;
+    transform: scale(1);
+    transition: transform 1s;
 
 }
 
 .front, .back {
     padding: 5px;
     border-radius: 10px;
-
+    backface-visibility: hidden;
 }
 h2 {
     background-color: bisque;
@@ -88,7 +90,15 @@ nav>li {
     font-family: 'Kaushan Script', cursive;
 }
 
+.tile.flip {
+    transform: rotateY(180deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
 /*/Other thnigs to work on
     music and controls
     pop up window for rules
     nav bar
+    
