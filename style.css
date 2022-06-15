@@ -34,20 +34,24 @@ button {
     border-radius: 20px;
     opacity: 0.9;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
-img>.playingField {
-    height: 150px;
-    width: 150px;
-}
 
-div>li {
-    display: inline-flex;
+.tile {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
 
 }
 
+.front, .back {
+    padding: 5px;
+    border-radius: 10px;
+
+}
 h2 {
     background-color: bisque;
     border-radius: 20px;
@@ -88,41 +92,3 @@ nav>li {
     music and controls
     pop up window for rules
     nav bar
-
-        /* This container is needed to position the front and back side */
-        .tileInner {
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-    
-        /* Do an horizontal flip when you move the mouse over the flip box container */
-        .playingField:hover .tileInner {
-            transform: rotateY(180deg);
-        }
-    
-        /* Position the front and back side */
-        .tileFront,   .tileBack {
-            -webkit-backface-visibility: hidden;
-            /* Safari */
-            backface-visibility: hidden;
-                    display: inline-flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-        }
-    
-        /* Style the front side (fallback if image is missing) */
-        .tileFront {
-            background-color: rgb(204, 237, 192);
-            color: black;
-        }
-    
-        /* Style the back side */
-        .tileBack {
-            background-color: rgb(255,202, 10);
-            color: white;
-            transform: rotateY(180deg);
-        }
