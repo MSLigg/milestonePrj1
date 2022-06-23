@@ -17,33 +17,32 @@ var firstTile, secondTile;
 var isLocked = false;
 
 function flipOver() {
-    if (isLocked) return;
-    this.classList.add('flip');
+    if(firstTile !== clickedTile && !disableTiles) {
+        clickedTile.classList.add("flip");
+        if(!firstTile) {
+            return firstTile = clickedTile;
+        }
+        secondTile = clickedTile;
+        disableTiles = true;
+        let tileOneImg = tileOne.querySelector(".back img").src,
+        tileTwoImg = tileTwo.querySelector(".back img").src;
+        checkMatch(tileOneImg, tileTwoImg);
+    }
+}
 
-if (!hasFlipped) {
-    hasFlipped = true;
-    firstTile = this;
-    return;
- }
-   secondTile = this;
-
-   checkMatch();
- }
 //this code will check for a match. If they match, the function will run to disable those tiles and remove the event listener
  function checkMatch () {
-   let isMatch = firstTile ===secondTile;
-   
-   if (firstTile === secondTile) {
-     disableTiles();
-     return;
-   }
-   
-   unflipTiles();
+   let isMatch = firstTile === secondTile;
+    isMatch ? disableTiles() : unflipTiles;
  }
+ 
 
  function disableTiles() {
    firstTile.removeEventListener('click', flipOver);
    secondTile.removeEventListener('click', flipOver);
+
+    resetField();
+
  }
 
  function unflipTiles() {
@@ -57,17 +56,10 @@ if (!hasFlipped) {
   }, 1500);
 }
 
- function unflipCards() {
-  lockBoard = true;
-
-  setTimeout(() => {
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
-
-    resetBoard();
-  }, 1500);
+function resetField() {
+  [hasFlipped, isLocked] = [false, false];
+  [firstTile, secondTile] = [null, null];
 }
-
 
  (function shuffle() {
   tiles.forEach(tile => {
