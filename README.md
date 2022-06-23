@@ -15,7 +15,15 @@ The HTML code should use sematic tags
 
 The game should have a Readme.md file in the GitHub repository that describes the inspiration for the game, explains the controls and how to play the game, lists the technologies used to build the game, and addresses any outstanding bugs or unfinished functionality.
 
-//my Logic, pseudocode, etc
+---
 
-landing page (music)
-index.html - small board
+---
+
+Directions adapted from HelpMyKidLearn.ie (https://www.helpmykidlearn.ie/activities/5-7/detail/memory-card-game)
+
+The objective is to collect all the pairs of tiles.
+There is a shuffle function built into the JS that will randomly place the tiles.
+
+If you successfully match a pair, the tiles will stay face up you should try to match another.
+When a player turns over two tiles that don't match, those tiles are turned face down again (in the same position) and you must try again.
+The trick is to remember which cards are where.
