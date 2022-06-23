@@ -1,77 +1,77 @@
-// tiles for the game
-const tileArray = [
-  {
-    name: 'anniespratt',
-    img: 'images/tiles/anniespratt.jpg'
-  },
-  {
-    name: 'chrislee',
-    img: 'images/tiles/chrislee.jpg'
-  },
-  {
-    name: 'galina',
-    img: 'images/tiles/galina.jpg'
-  },
-  {
-    name: 'kevin',
-    img: 'images/tiles/kevin.jpg'
-  },
-  {
-    name: 'lauren',
-    img: 'images/tiles/lauren.jpg'
-  },
-  {
-    name: 'linhle',
-    img: 'images/tiles/linhle.jpg'
-  },
-  {
-    name: 'severin',
-    img: 'images/tiles/severin.jpg'
-  },
-  {
-    name: 'sincerely',
-    img: 'images/tiles/sincerely.jpg'
-  }
-]
-const tilesChosen = [];
-
 // create tile dupes so I won't have to hard code 16 tiles, by creating a for loop this just cretes a copy of a tile at whatever index my loop is at through the length of the array
-  function createTiles() {
+  /*function createTiles() {
     for (let i = 0; i < tileArray.length; i++) {
       tiles.push(tileArray[i])
     }
 // scramble tiles
     tileArray.sort(() => 0.5 - Math.random());
-  }
+}   
 
-function createField() {
-    for (let i = 0; i < tileArray.length; i++) {
-        var tile = document.createElement('img')
-        tile.setAttribute('src', 'images/cover.png')
-        tile.addEventListener('click')
-        
+var tiles = document.querySelectorAll('.playingField');
 
+*/
+const tiles = document.querySelectorAll('.tile');
 
-    }
-}
+var hasFlipped = false;
+var firstTile, secondTile;
+var isLocked = false;
 
-
-  //clicking event listener
 function flipOver() {
+  if (isLocked) return;
+  if (this === firstTile) return;
 
+  this.classList.add('flip');
+
+  if (!hasFlipped) {
+    hasFlipped = true;
+    firstTile = this;
+
+    return;
+  }
+  secondTile = this;
+
+  checkMatch();
+}
+//i had to establish a data ID in order to create something to match the images since just naming them did not work
+//Source: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+//this code will check for a match. If they match, the function will run to disable those tiles and remove the event listener
+function checkMatch() {
+  let isMatch = firstTile.dataset.id === secondTile.dataset.id;
+
+  isMatch ? disableTiles() : unflipTiles();
 }
 
-//check for match
-if tilesChosen === 2 && tile1 === tile2{
-    //play chime
+function disableTiles() {
+  firstTile.removeEventListener('click', flipOver);
+  secondTile.removeEventListener('click', flipOver);
 
+  resetField();
+}
+//if my field is locked, set timeout and remove those tiles from the flip constructor class
+function unflipTiles() {
+  isLocked = true;
+
+  setTimeout(() => {
+    firstTile.classList.remove('flip');
+    secondTile.classList.remove('flip');
+
+    resetField();
+  }, 1500);
+}
+//in resetting the field, we are removing the clicked cards to click again
+function resetField() {
+  [hasFlipped, isLocked] = [false, false];
+  [firstTile, secondTile] = [null, null];
 }
 
-//if tiles match, set image to default to 'remove'
-if tilesChosen[0] === tilesChosen[1] {
+//instead of using JS to create an array that will randomly position my tiles, I am going to use the math function to iterate through the 16 images and order them randomly
+(function shuffle() {
+  tiles.forEach(tile => {
+    let randomPos = Math.floor(Math.random() * 16);
+    tile.style.order = randomPos;
+  });
+})();
 
-    tile1?setAttribute('src', 'images/transparent.png')
-    tile2?setAttribute('src', 'images/transparent.png')
-}
-
-createField()
+//this adds an event listener that clicks and toggles the flip over function on each tile
+tiles.forEach(tile => tile.addEventListener('click', flipOver));

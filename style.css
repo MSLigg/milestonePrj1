@@ -27,7 +27,7 @@ button {
     font-size: 30px;
     font-family: 'Kaushan Script', cursive;
 }
-/*
+
 nav {
     background-color: rgb(224, 109, 12);
     border: 8px groove bisque;
@@ -35,7 +35,6 @@ nav {
     color: bisque;
     font-family: 'Kaushan Script', cursive;
     height: 5vh;
-    width: 100%;
 }
 
 nav>ul {
@@ -43,13 +42,12 @@ nav>ul {
     text-align: justify;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
 }
 
 nav>li {
     font-family: 'Kaushan Script', cursive;
 }
-*/
+
 
 .playingField {
     background-color: bisque;
