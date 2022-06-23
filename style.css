@@ -1,10 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     background-image: url(images/background.png);
     background-color: rgb(150, 217, 203);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    align-content: center;
+    height: 100vh;
+    display: flex;
 }
 
 button {
@@ -21,38 +27,61 @@ button {
     font-size: 30px;
     font-family: 'Kaushan Script', cursive;
 }
+/*
+nav {
+    background-color: rgb(224, 109, 12);
+    border: 8px groove bisque;
+    border-radius: 20px;
+    color: bisque;
+    font-family: 'Kaushan Script', cursive;
+    height: 5vh;
+    width: 100%;
+}
+
+nav>ul {
+    list-style-type: none;
+    text-align: justify;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+nav>li {
+    font-family: 'Kaushan Script', cursive;
+}
+*/
 
 .playingField {
     background-color: bisque;
-    height: 500px;
-    width: 500px;
-    position: fixed;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
+    opacity: 0.9;
     border: 8px groove rgb(224, 109, 12);
     border-radius: 20px;
-    opacity: 0.9;
+    height: 640px;
+    width: 640px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    perspective: 1000px;
+
 }
 
 .tile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    width: calc(25%);
+    height: calc(25%);
     position: relative;
     transform: scale(1);
-    transition: transform 1s;
-
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .front, .back {
-    padding: 5px;
+    padding: 20px;
     border-radius: 10px;
     backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: absolute;
 }
 h2 {
     background-color: bisque;
@@ -67,28 +96,10 @@ h2 {
     
 }
 
-nav {
-    top: 0px;
-    background-color: rgb(224, 109, 12);
-    border: 8px groove bisque;
-    border-radius: 20px;
-    color: bisque;
-    height: 2%;
-    width: 98%;
-    font-family: 'Kaushan Script', cursive;
-
-}
-
-nav>ul {
-    list-style-type: none;
-    text-align: justify;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-nav>li {
-    font-family: 'Kaushan Script', cursive;
-}
+ .tile:active {
+     transform: scale(0.97);
+     transition: transform .2s;
+ }
 
 .tile.flip {
     transform: rotateY(180deg);
