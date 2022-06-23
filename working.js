@@ -9,19 +9,15 @@
 
 var tiles = document.querySelectorAll('.playingField');
 
-function flipOver() {
-  this.classList.toggle('flip');
-}
-
-cards.forEach(card => card.addEventListener('click', flipCard));
-
 */
 const tiles = document.querySelectorAll('.tile');
 
-let hasFlipped = false;
-let firstTile, secondTile;
+var hasFlipped = false;
+var firstTile, secondTile;
+var isLocked = false;
 
 function flipOver() {
+    if (isLocked) return;
     this.classList.add('flip');
 
 if (!hasFlipped) {
@@ -30,17 +26,18 @@ if (!hasFlipped) {
     return;
  }
    secondTile = this;
-   hasFlipped = false;
 
    checkMatch();
  }
 //this code will check for a match. If they match, the function will run to disable those tiles and remove the event listener
- function checkMatch() {
+ function checkMatch () {
+   let isMatch = firstTile ===secondTile;
+   
    if (firstTile === secondTile) {
      disableTiles();
      return;
    }
-
+   
    unflipTiles();
  }
 
@@ -50,11 +47,50 @@ if (!hasFlipped) {
  }
 
  function unflipTiles() {
+   isLocked = true;
+
    setTimeout(() => {
      firstTile.classList.remove('flip');
      secondTile.classList.remove('flip');
-   }, 1500);
- }
+
+     resetField();
+  }, 1500);
+}
+
+ function unflipCards() {
+  lockBoard = true;
+
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    resetBoard();
+  }, 1500);
+}
+
+
+ (function shuffle() {
+  tiles.forEach(tile => {
+    let randomPos = Math.floor(Math.random() * 12);
+    tile.style.order = randomPos;
+  });
+  })();
+
+ /*/create a function to shuffle the tiles.
+ function shuffleTiles() {
+    matched = 0;
+    disableTiles = false;
+    firstTile = secondTile = "";
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+    arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+    tiles.forEach((tile, i) => {
+        tile.classList.remove('flip');
+        let imgTag = tile.querySelector('images/cover.png');
+        imgTag.src = 'images/img-${arr[i]}.png';
+        tile.addEventListener("click", flipOver);
+    });
+}
+shuffleTiles();*/
 
 //this adds an event listener that clicks and toggles the flip over function on each tile
 tiles.forEach(tile => tile.addEventListener('click', flipOver));
